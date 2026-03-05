@@ -1,0 +1,19 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# imports
+.import/
+
+# Mono
+.mono/
+
+# build
+export/
+
+# logs
+*.log
+
+# system
+.DS_Store
+Thumbs.db
