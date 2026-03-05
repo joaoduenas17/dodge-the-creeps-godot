@@ -8,6 +8,7 @@ var screen_size
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	speed = Config.player_speed()
 	hide()
 
 func _process(delta):

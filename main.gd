@@ -15,6 +15,12 @@ func game_over() -> void:
 func new_game() -> void:
 	score = 0
 	$Player.start($StartPosition.position)
+
+	# Configuración desde el "ambiente" (Config.gd)
+	$StartTimer.wait_time = Config.game_start_delay()
+	$MobTimer.wait_time = Config.game_mob_spawn_wait()
+	$ScoreTimer.wait_time = Config.game_score_interval()
+
 	$StartTimer.start()
 
 func _on_mob_timer_timeout() -> void:
@@ -27,10 +33,11 @@ func _on_mob_timer_timeout() -> void:
 
 	mob.position = mob_spawn_location.position
 
-	direction += randf_range(-PI / 4, PI / 4)
+	var r = Config.mob_direction_randomness()
+	direction += randf_range(-r, r)
 	mob.rotation = direction
 
-	var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
+	var velocity = Vector2(randf_range(Config.mob_min_speed(), Config.mob_max_speed()), 0.0)
 	mob.linear_velocity = velocity.rotated(direction)
 
 	add_child(mob)
