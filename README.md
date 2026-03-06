@@ -21,11 +21,11 @@ Control del estado del juego
 
 Además de la implementación base del tutorial, el proyecto incluye mejoras adicionales como:
 
-Un sistema de configuración externa para parámetros del juego
+Sistema de configuración externa para parámetros del juego
 
-Control de versiones mediante Git y GitHub
+Control de versiones utilizando Git y GitHub
 
-Una estructura organizada del proyecto para facilitar su mantenimiento
+Estructura organizada del proyecto para facilitar su mantenimiento
 
 Este repositorio contiene todo el código fuente y los recursos necesarios para ejecutar el juego localmente.
 
@@ -53,7 +53,7 @@ Requisitos
 
 Antes de ejecutar el proyecto, asegúrate de tener instalado el siguiente software en tu sistema.
 
-Motor Godot
+Godot Engine
 
 Este proyecto fue desarrollado utilizando:
 
@@ -105,11 +105,9 @@ Godot cargará automáticamente todas las escenas y recursos del proyecto.
 
 Una vez que el proyecto esté abierto en el editor de Godot:
 
-Presiona el botón Play (▶) ubicado en la parte superior derecha del editor.
+Presiona el botón Play ubicado en la parte superior derecha del editor.
 
-o
-
-Usa el atajo de teclado:
+o utiliza el atajo de teclado:
 
 F5
 
