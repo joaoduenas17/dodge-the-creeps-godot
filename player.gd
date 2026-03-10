@@ -3,6 +3,7 @@ signal hit
 
 @export var speed = 400
 var screen_size
+var invulnerable = false
 
 @onready var anim = $AnimatedSprite2D
 
@@ -42,11 +43,24 @@ func _process(delta):
 	position.y = clamp(position.y, 0, screen_size.y)
 
 func _on_body_entered(body: Node2D) -> void:
-	hide() # Player disappears after being hit.
+	if invulnerable:
+		return
+
+	anim.stop()
+	hide()
 	hit.emit()
 	$CollisionShape2D.set_deferred("disabled", true)
 
 func start(pos):
 	position = pos
 	show()
-	$CollisionShape2D.disabled = false
+	$CollisionShape2D.set_deferred("disabled", false)
+
+func set_invulnerable(duration: float) -> void:
+	invulnerable = true
+	modulate.a = 0.5
+
+	await get_tree().create_timer(duration).timeout
+
+	invulnerable = false
+	modulate.a = 1.0

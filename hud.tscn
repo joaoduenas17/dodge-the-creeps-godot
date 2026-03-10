@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bofgq31no27te"]
+
+[ext_resource type="FontFile" uid="uid://cmahk4qbdqvuj" path="res://fonts/Xolonium-Regular.ttf" id="1_37p78"]
+[ext_resource type="Script" uid="uid://bwx0epsoaoael" path="res://hud.gd" id="1_64ctp"]
+
+[node name="HUD" type="CanvasLayer" unique_id=183731031]
+script = ExtResource("1_64ctp")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1609512649]
+offset_left = 224.0
+offset_top = 8.0
+offset_right = 269.0
+offset_bottom = 86.0
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 64
+text = "0"
+horizontal_alignment = 1
+
+[node name="Message" type="Label" parent="." unique_id=1283651821]
+offset_left = 8.0
+offset_top = 256.0
+offset_right = 476.0
+offset_bottom = 314.0
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 48
+text = "Esquiva!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="." unique_id=1956864298]
+offset_left = 192.0
+offset_top = 512.0
+offset_right = 306.0
+offset_bottom = 569.0
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 40
+text = "Start"
+
+[node name="MessageTimer" type="Timer" parent="." unique_id=1670429160]
+wait_time = 2.0
+one_shot = true
+
+[node name="LivesLabel" type="Label" parent="." unique_id=630846632]
+offset_left = 176.0
+offset_top = 664.0
+offset_right = 325.0
+offset_bottom = 708.0
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 36
+text = "Vidas: 3"
+horizontal_alignment = 1
+
+[node name="HighScoreLabel" type="Label" parent="." unique_id=378208063]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_37p78")
+theme_override_font_sizes/font_size = 24
+text = "High Score: 0"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
