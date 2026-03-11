@@ -86,7 +86,7 @@ git clone https://github.com/joaoduenas17/dodge-the-creeps-godot.git
 Luego ingresa a la carpeta del proyecto:
 
 ```bash
-cd TU_REPOSITORIO
+cd dodge-the-creeps-godot
 ```
 
 Alternativamente, puedes descargar el repositorio como archivo ZIP y extraerlo manualmente en tu computadora.
