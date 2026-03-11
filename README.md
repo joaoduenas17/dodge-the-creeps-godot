@@ -80,7 +80,7 @@ Sigue los pasos a continuación para ejecutar el juego en tu computadora.
 Primero, clona el repositorio desde GitHub utilizando Git:
 
 ```bash
-git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git
+git clone https://github.com/TU_USUARIO/TU_REPOSITORIO.git](https://github.com/joaoduenas17/dodge-the-creeps-godot.git
 ```
 
 Luego ingresa a la carpeta del proyecto:
